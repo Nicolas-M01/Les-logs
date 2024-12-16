@@ -28,7 +28,7 @@ J'ai ensuite lancé plusieurs requêtes :
 
 ---
 ## 4. Analyse les logs générés et identifie :  
-pour affichier les accèes au serveur Apache.  
+pour afficher les accès au serveur Apache.  
 ``cat /var/log/apache2/access.log``  
 
 * ### Une requête réussie (code 200)
