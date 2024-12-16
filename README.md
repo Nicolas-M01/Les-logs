@@ -13,4 +13,4 @@ Il faut ensuite s'assurer que ces 2 lignes sont décommentées, elles enregistre
 ``ErrorLog ${APACHE_LOG_DIR}/error.log``  
 ``CustomLog ${APACHE_LOG_DIR}/access.log combined``  
 
-Dans le cas où elles sont commentées, il faut décommenter et relancer le service (pour rappel ``systemctl restart apache2``).  
+Dans le cas où elles sont commentées, il faut décommenter et relancer le service (pour rappel ``systemctl restart apache2``). :white_check_mark:  
