@@ -33,11 +33,16 @@ pour affichier les accèes au serveur Apache.
 ``cat /var/log/apache2/access.log``  
 
 * ### Une requête réussie (code 200)
-![Capture d'écran 2024-12-16 113246](https://github.com/user-attachments/assets/dcd482e5-9371-4adf-8b5a-01bc2d50afec)
+![Capture d'écran 2024-12-16 113246](https://github.com/user-attachments/assets/dcd482e5-9371-4adf-8b5a-01bc2d50afec)  
 La machine locale (`127.0.0.1`) a effectué une requête qui a abouti (code 200).   
 
 * ### Une erreur 404 (page non trouvée)  
-![Capture d'écran 2024-12-16 113338](https://github.com/user-attachments/assets/0992da5b-4bd7-4638-b472-f88b38a2e5eb)
+![Capture d'écran 2024-12-16 113338](https://github.com/user-attachments/assets/0992da5b-4bd7-4638-b472-f88b38a2e5eb)  
 La machine locale (`127.0.0.1`) a effectué une requête qui n'a abouti (code 404), car la page "blabla" n'existe pas.   
 
 * ### Les IP les plus fréquentes  
+Dans mon cas il n'y a quasiment pas de traffic.  
+![Capture d'écran 2024-12-16 114144](https://github.com/user-attachments/assets/958389da-b0af-42bd-b98a-78be43a8979e)  
+l'unique adresse est l'adresse locale. Dans le cas d'un nombre élevé on peut utiliser des commandes bash pour trier/filtrer  :
+``awk '{print $1} /var/log/apache2/access.log | sort | uniq -c | sort -nr | head``  
+(la première avec "awk" permet de ne garder que la première colonne, ensuite on a le chemin du fichier, puis on trie avec "sort", puis "uniq -c" va compter le nombre de lignes de chaque adresse IP, puis "sort -nr" va trier par fréquence (décroissant), puis "head" pour afficher les 10 premières.  
