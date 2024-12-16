@@ -22,7 +22,17 @@ Dans le cas où elles sont commentées, il faut décommenter et relancer le serv
 Pour générer des logs, il faut lancer des requêtes.  
 J'ai installé l'outil **"Curl"**, (``apt install curl``) qui permet de faire des requêtes HTTP en lignes de commandes.  
 J'ai ensuite lancé plusieurs requêtes :  
-``curl http://localhost`` # Cette requête va réussir  
-``curl http://localhost/blabla`` # Cette requête va échouer  
+``curl http://localhost`` # Cette requête va réussir. Elle sert à vérifier que mon serveur web fonctionne bien.  
+``curl http://localhost/blabla`` # Cette requête va échouer, car la page est inextistante.   
+``curl -A "CustomUserAgent" http://localhost``  # 
 
-Je suis sur une Debian en console
+pour affichier les accèes au serveur Apache.  
+``cat /var/log/apache2/access.log``  
+
+---
+## 4. Analyse les logs générés et identifie :  
+* ### Une requête réussie (code 200)
+  
+* ### Une erreur 404 (page non trouvée)
+  
+* ### Les IP les plus fréquentes  
