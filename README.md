@@ -24,8 +24,6 @@ J'ai installé l'outil **"Curl"**, (``apt install curl``) qui permet de faire de
 J'ai ensuite lancé plusieurs requêtes :  
 ``curl http://localhost`` # Cette requête va réussir. Elle sert à vérifier que mon serveur web fonctionne bien.  
 ``curl http://localhost/blabla`` # Cette requête va échouer, car la page est inextistante.   
-``curl -A "CustomUserAgent" http://localhost``  # 
-
 
 ---
 ## 4. Analyse les logs générés et identifie :  
@@ -43,6 +41,6 @@ La machine locale (`127.0.0.1`) a effectué une requête qui n'a abouti (code 40
 * ### Les IP les plus fréquentes  
 Dans mon cas il n'y a quasiment pas de traffic.  
 ![Capture d'écran 2024-12-16 114144](https://github.com/user-attachments/assets/958389da-b0af-42bd-b98a-78be43a8979e)  
-l'unique adresse est l'adresse locale. Dans le cas d'un nombre élevé on peut utiliser des commandes bash pour trier/filtrer  :
+l'unique adresse est l'adresse locale. Dans le cas d'un nombre élevé on peut utiliser des commandes bash pour trier/filtrer  :  
 ``awk '{print $1} /var/log/apache2/access.log | sort | uniq -c | sort -nr | head``  
 (la première avec "awk" permet de ne garder que la première colonne, ensuite on a le chemin du fichier, puis on trie avec "sort", puis "uniq -c" va compter le nombre de lignes de chaque adresse IP, puis "sort -nr" va trier par fréquence (décroissant), puis "head" pour afficher les 10 premières.  
