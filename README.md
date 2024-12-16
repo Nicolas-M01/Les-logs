@@ -33,11 +33,11 @@ pour affichier les accèes au serveur Apache.
 
 * ### Une requête réussie (code 200)
 ![Capture d'écran 2024-12-16 113246](https://github.com/user-attachments/assets/dcd482e5-9371-4adf-8b5a-01bc2d50afec)  
-La machine locale (`127.0.0.1`) a effectué une requête qui a abouti (code 200).   
+La machine locale (`127.0.0.1`) a effectué une requête qui a abouti (code 200). :white_check_mark:   
 
 * ### Une erreur 404 (page non trouvée)  
 ![Capture d'écran 2024-12-16 113338](https://github.com/user-attachments/assets/0992da5b-4bd7-4638-b472-f88b38a2e5eb)  
-La machine locale (`127.0.0.1`) a effectué une requête qui n'a abouti (code 404), car la page "blabla" n'existe pas.   
+La machine locale (`127.0.0.1`) a effectué une requête qui n'a abouti (code 404), car la page "blabla" n'existe pas. :white_check_mark:  
 
 * ### Les IP les plus fréquentes  
 Dans mon cas il n'y a quasiment pas de traffic.  
