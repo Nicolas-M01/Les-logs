@@ -43,7 +43,7 @@ La machine locale (`127.0.0.1`) a effectué une requête qui n'a pas abouti (cod
 Dans mon cas il n'y a quasiment pas de traffic.  
 ![Capture d'écran 2024-12-16 114144](https://github.com/user-attachments/assets/958389da-b0af-42bd-b98a-78be43a8979e)  
 l'unique adresse est l'adresse locale. Dans le cas d'un nombre élevé on peut utiliser des commandes bash pour trier/filtrer  :  
-``awk '{print $1} /var/log/apache2/access.log | sort | uniq -c | sort -nr | head``  
+``awk '{print $1}' /var/log/apache2/access.log | sort | uniq -c | sort -nr | head``  
 (la première avec "awk" permet de ne garder que la première colonne, ensuite on a le chemin du fichier, puis on trie avec "sort", puis "uniq -c" va compter le nombre de lignes de chaque adresse IP, puis "sort -nr" va trier par fréquence (décroissant), puis "head" pour afficher les 10 premières.  
 ![Capture d'écran 2024-12-16 115229](https://github.com/user-attachments/assets/45192e89-5a90-45da-9e9a-dc925f638625)  
 :white_check_mark:  
